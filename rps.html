@@ -1,17 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rock Paper Shotgun</title>
+    <!--  -->
+  <title>Rock Paper Scissors</title>
   <script>
 
         // Your JavaScript goes here!
        function computerPlay(){
-       let x = ["Rock", "Paper", "Shotgun"]
+       let x = ["ROCK", "PAPER", "SCISSORS"]
        output= x[Math.floor(Math.random() * x.length)]
        return output
        }
-       console.log(computerPlay())
-   
+       //console.log(computerPlay())
+
+       
+       function playRound(playerSelection, computerSelection){
+        console.log(playerSelection)
+        playerSelection=playerSelection.toUpperCase()
+        console.log(playerSelection)
+        console.log("vs")
+        console.log(computerSelection)
+        if(playerSelection==computerSelection){
+            return "It's a draw! Go again" 
+
+        }
+        else{
+            if(playerSelection=="ROCK"){
+
+              if(computerSelection=="PAPER"){
+                return "You Lose! Paper beats Rock"
+              } 
+              else if(computerSelection=="SCISSORS"){
+                return "You Win! Rock beats Scissors"
+              }
+            }
+            else if(playerSelection=="PAPER") {
+
+                if(computerSelection=="ROCK"){
+                return "You Win! Paper beats Rock"
+              } 
+              else if(computerSelection=="SCISSORS"){
+                return "You Lose! Scissors beats Paper"
+              }
+            }
+            else if(playerSelection=="SCISSORS"){
+
+                if(computerSelection=="ROCK"){
+                return "You Lose! Rock beats Scissors"
+              } 
+              else if(computerSelection=="PAPER"){
+                return "You Win! Scissors beats Paper"
+              }
+
+            }
+            else{
+              console.log("error")
+              return "Error"
+            }
+        }
+       }
+
+       let x = "Rock"
+       let y = playRound(x,computerPlay())
+       console.log(y)
+       
+
+
+
+
      </script>
 </head>
 <body>
